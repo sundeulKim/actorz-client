@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/static/css/main.2ab7883d.chunk.css",
+    "main.js": "/static/js/main.856168b2.chunk.js",
+    "main.js.map": "/static/js/main.856168b2.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.d68a6635.js",
+    "runtime-main.js.map": "/static/js/runtime-main.d68a6635.js.map",
+    "static/css/2.0631dceb.chunk.css": "/static/css/2.0631dceb.chunk.css",
+    "static/js/2.3258c1aa.chunk.js": "/static/js/2.3258c1aa.chunk.js",
+    "static/js/2.3258c1aa.chunk.js.map": "/static/js/2.3258c1aa.chunk.js.map",
+    "static/js/3.ba5ee6e5.chunk.js": "/static/js/3.ba5ee6e5.chunk.js",
+    "static/js/3.ba5ee6e5.chunk.js.map": "/static/js/3.ba5ee6e5.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/2.0631dceb.chunk.css.map": "/static/css/2.0631dceb.chunk.css.map",
+    "static/css/main.2ab7883d.chunk.css.map": "/static/css/main.2ab7883d.chunk.css.map",
+    "static/js/2.3258c1aa.chunk.js.LICENSE.txt": "/static/js/2.3258c1aa.chunk.js.LICENSE.txt",
+    "static/media/semantic.min.css": "/static/media/outline-icons.ddae9b1b.woff",
+    "static/media/depression.0578a295.png": "/static/media/depression.0578a295.png",
+    "static/media/ipadGifcontent.023bba08.gif": "/static/media/ipadGifcontent.023bba08.gif",
+    "static/media/iphoneGifcontent.403b7de4.gif": "/static/media/iphoneGifcontent.403b7de4.gif",
+    "static/media/slick-theme.css": "/static/media/slick.c94f7671.ttf"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d68a6635.js",
+    "static/css/2.0631dceb.chunk.css",
+    "static/js/2.3258c1aa.chunk.js",
+    "static/css/main.2ab7883d.chunk.css",
+    "static/js/main.856168b2.chunk.js"
+  ]
+}
