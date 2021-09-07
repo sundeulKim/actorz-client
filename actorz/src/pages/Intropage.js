@@ -172,6 +172,10 @@ const Intropage = () => {
   useEffect(() => {
     // window.scrollTo(0, 0);
     WDOT.logScreen({});
+    let event = {};
+    event["event"] = "w_login_complete";
+    event["loginTp"] = "facebook"; //로그인 방식
+    WDOT.logEvent(event);
     window.addEventListener("scroll", onScroll);
     return () => {
         window.removeEventListener("scroll", onScroll);
