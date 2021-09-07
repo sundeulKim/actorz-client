@@ -12,6 +12,7 @@
     "@testing-library/user-event": "^12.8.3",
     "antd": "^4.16.5",
     "axios": "^0.21.1",
+    "dop-website-sdk": "^1.0.15",
     "ffmpeg": "^0.0.4",
     "gapi": "^0.0.3",
     "gsap": "^3.7.0",

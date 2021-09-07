@@ -16,8 +16,23 @@ import GotoTopMobile from "../components/GotoTopMobile";
 import ScrollTrigger from '@terwanerik/scrolltrigger'
 import iphoneG from "../images/iphoneGifcontent.gif";
 import ipadG from "../images/ipadGifcontent.gif";
+import { WDOTInitialization } from "dop-website-sdk";
 
 const Intropage = () => {
+
+  WDOTInitialization.setConfig({
+    serviceNumber:20046,
+    dotAccessToken:"AGZJ1SNvMFGA8K03XKpgabhgCRdQdGERO1H2coxsxeupjwTaG9IEFNfqVdTiu/j8GqVIhatO/Rko/kPPQwJskhsvWYjJ1Kw7Y2XUdvzfado=",
+    combackUserLimitDays:14,
+    dotEndPoint:"//trk.analytics.wisetracker.co.kr/web/v1/dataRcv.do",
+    adClkEndPoint:"//trk.analytics.wisetracker.co.kr/ldsys/v1/clickDataRcv.do",
+    adLandingEndPoint:"//app.wisetracker.co.kr",
+    includeUrl:"actorz.click",
+    excludeUrl:"",
+    referrerExpire:7
+  });
+  WDOTInitialization.init();
+  let WDOT = window.WDOT;
 
   const trigger = new ScrollTrigger();
   trigger.add('[data-trigger]');
@@ -65,7 +80,7 @@ const Intropage = () => {
     arrows: false,
     fade: true,
   };
-  
+
   const namecardSettings = {
     className: "center",
     centerMode: true,
@@ -156,6 +171,7 @@ const Intropage = () => {
 
   useEffect(() => {
     // window.scrollTo(0, 0);
+    WDOT.logScreen({});
     window.addEventListener("scroll", onScroll);
     return () => {
         window.removeEventListener("scroll", onScroll);
@@ -170,7 +186,7 @@ const Intropage = () => {
 
   return (
     <>
-      {isPc && 
+      {isPc &&
         <>
         {/* <div className="blockhere"> </div> */}
         <IntroNav />
@@ -211,7 +227,7 @@ const Intropage = () => {
                   <div className="set5 resize">
                     <img className="setPhotoA" alt="" src="https://media.vlpt.us/images/iooi75/post/f424b957-0755-4407-b24f-01cd5da2c5a3/thumb-2009107696_1eypsHg8_75b78deb1f72d28d204e9c7f8684aa27b44c0cab_370x420.jpg"/>
                   </div>
-                  <div className="mainContentsCenterDisplay"> 
+                  <div className="mainContentsCenterDisplay">
                     <div  className="scrollIMGPosition">
                       <img alt="" className="introLOGO" src="https://media.vlpt.us/images/iooi75/post/1f61e5e2-18d4-469a-8718-ff6799aadbaf/-1.png"/>
                     </div>
@@ -239,7 +255,7 @@ const Intropage = () => {
                   </div>
                 </div>
               </div>
-                          
+
               <div className="free2">
                 <div className="setOrder">
                   <div className="set1">
@@ -275,7 +291,7 @@ const Intropage = () => {
                   <div className="set5">
                     <img className="setPhotoA" alt="" src="https://media.vlpt.us/images/iooi75/post/f42db9bb-45d9-4602-9b33-8a13e7a37631/thumb-2040665147_LMudibIf_db793839b04dff80f2e2aae0a8d8ffe7a85aa2a9_370x420.jpg"/>
                   </div>
-                  <div className="mainContentsCenterDisplay"> 
+                  <div className="mainContentsCenterDisplay">
                     <div  className="scrollIMGPosition">
                       <img alt="" className="introLOGO" src="https://media.vlpt.us/images/iooi75/post/1f61e5e2-18d4-469a-8718-ff6799aadbaf/-1.png"/>
                     </div>
@@ -304,7 +320,7 @@ const Intropage = () => {
                 </div>
               </div>
             </Slider>
-            
+
           </div>
 
           <div className="blockPosition"></div>
@@ -329,14 +345,14 @@ const Intropage = () => {
           {/* <div className="blockPositionDivide"></div> */}
 
           <div data-trigger className="startContentsTitle" >
-            답은 
+            답은
           </div>
 
           <div className="blockPosition"></div>
 
           <div data-trigger className="startContentsTitle" >
             <img className="mainActorPic" src="https://media.vlpt.us/images/iooi75/post/ebbbb9d9-784d-4210-b961-2f1d833423b5/Screen%20Shot%202021-07-17%20at%202.16.19%20AM.png" alt="" />
-            
+
           <div className="blockPositionDivide"></div>
           <div data-trigger className="contentsPositionWhere"> 배우 </div>
           </div>
@@ -450,7 +466,7 @@ const Intropage = () => {
             </Comment>
           </Comment.Group>
 
-          
+
 
           <Comment.Group className="profilePos" style={{transform: `translateX(${-position+8720}px)`}} size='large'>
             <Comment>
@@ -633,11 +649,11 @@ const Intropage = () => {
                 </Comment.Actions>
               </Comment.Content>
             </Comment>
-          </Comment.Group>    
+          </Comment.Group>
         </div>
 
           <div className="blockPositionDivide"></div>
-          
+
 
           <div className="blockPositionDivide"></div>
 
@@ -649,13 +665,13 @@ const Intropage = () => {
                 사진도
               </div>
             </div>
-            
+
 
             <div className="blockPositionDivider">
-              <div data-trigger className="blockPosition20"> 
+              <div data-trigger className="blockPosition20">
                 영상도
               </div>
-              <div data-trigger className="positionYellow"> 
+              <div data-trigger className="positionYellow">
                 <img src="https://media.vlpt.us/images/iooi75/post/566f2ed8-e8ff-4a59-b33f-4afc2a23fd79/Screen%20Shot%202021-07-16%20at%2010.39.54%20PM.png" alt="" />
               </div>
             </div>
@@ -668,10 +684,10 @@ const Intropage = () => {
             어떠한 기기에서도
             <div className="blockPositionDivide"></div>
             <div className="deviceDevider">
-              <div className="device1"> 
+              <div className="device1">
                 <div data-trigger>
                   <img alt="" className="iphonePic" src="https://media.vlpt.us/images/iooi75/post/f7b1069c-b36c-41a8-9bd7-725fbb01940d/iphone-1845808_1280.png" />
-                  
+
                   <img alt="" className="iphoneGif" src ={iphoneG} />
                 </div>
               </div>
@@ -695,8 +711,8 @@ const Intropage = () => {
           <div className="commentsGroup">
 
             <div className="commentsGroupX"> </div>
-            <div className="commentsGroupY">   
-            
+            <div className="commentsGroupY">
+
             </div>
             <div className="commentsGroupX"> </div>
           </div>
@@ -711,7 +727,7 @@ const Intropage = () => {
 
           <div className="blockPositionDivide"></div>
 
-          
+
           <div data-trigger>
             <Slider {...namecardSettings} className="cardlistGroup" >
               <div className="cardUI">
@@ -772,7 +788,7 @@ const Intropage = () => {
             </Slider>
           </div>
           <div className="blockPosition"></div>
-            
+
           <div data-trigger className="introLastContents">
             <div className="lastContentsTitleDD">
               <div className="lastContentsTitlePosition" >
@@ -785,7 +801,7 @@ const Intropage = () => {
                 </Link>
               </div>
             </div>
-          
+
             <img className="introLastContents2" alt="" src="https://media.vlpt.us/images/iooi75/post/f682088c-ca53-4303-b9d0-e7b13bfa06f4/3_2.png" />
           </div>
 
@@ -793,8 +809,8 @@ const Intropage = () => {
         <Footer />
       </>
       }
-      
-      {isTablet && 
+
+      {isTablet &&
        <>
         {/* <div className="blockhere"> </div> */}
         <IntroNav />
@@ -835,7 +851,7 @@ const Intropage = () => {
                   <div className="set5 resize">
                     <img className="setPhotoA" alt="" src="https://media.vlpt.us/images/iooi75/post/f424b957-0755-4407-b24f-01cd5da2c5a3/thumb-2009107696_1eypsHg8_75b78deb1f72d28d204e9c7f8684aa27b44c0cab_370x420.jpg"/>
                   </div>
-                  <div className="mainContentsCenterDisplay"> 
+                  <div className="mainContentsCenterDisplay">
                     <div  className="scrollIMGPosition">
                       <img alt="" className="introLOGO" src="https://media.vlpt.us/images/iooi75/post/1f61e5e2-18d4-469a-8718-ff6799aadbaf/-1.png"/>
                     </div>
@@ -863,7 +879,7 @@ const Intropage = () => {
                   </div>
                 </div>
               </div>
-                          
+
               <div className="free2">
                 <div className="setOrder">
                   <div className="set1">
@@ -899,7 +915,7 @@ const Intropage = () => {
                   <div className="set5 resize">
                     <img className="setPhotoA" alt="" src="https://media.vlpt.us/images/iooi75/post/f42db9bb-45d9-4602-9b33-8a13e7a37631/thumb-2040665147_LMudibIf_db793839b04dff80f2e2aae0a8d8ffe7a85aa2a9_370x420.jpg"/>
                   </div>
-                  <div className="mainContentsCenterDisplay"> 
+                  <div className="mainContentsCenterDisplay">
                     <div  className="scrollIMGPosition">
                       <img alt="" className="introLOGO" src="https://media.vlpt.us/images/iooi75/post/1f61e5e2-18d4-469a-8718-ff6799aadbaf/-1.png"/>
                     </div>
@@ -928,7 +944,7 @@ const Intropage = () => {
                 </div>
               </div>
             </Slider>
-            
+
           </div>
 
           <div className="blockPosition"></div>
@@ -951,14 +967,14 @@ const Intropage = () => {
           <div className="blockPositionDivide"></div>
 
           <div data-trigger className="startContentsTitleT" >
-            답은 
+            답은
           </div>
 
           <div className="blockPosition"></div>
 
           <div data-trigger className="startContentsTitleT" >
             <img className="mainActorPic" src="https://media.vlpt.us/images/iooi75/post/ebbbb9d9-784d-4210-b961-2f1d833423b5/Screen%20Shot%202021-07-17%20at%202.16.19%20AM.png" alt="" />
-            
+
           <div className="blockPositionDivide"></div>
           <div data-trigger className="contentsPositionWhereStrong"> 배우 </div>
           </div>
@@ -1075,7 +1091,7 @@ const Intropage = () => {
               </Comment>
             </Comment.Group>
 
-            
+
 
             <Comment.Group data-trigger className="commentsBlurEffect" size='large'>
               <Comment>
@@ -1262,7 +1278,7 @@ const Intropage = () => {
           </div>
           <div className="mobileCommentsBlockRight"></div>
         </div>
-          
+
         {/*
           <div className="profilesEffectTest">
             <Comment.Group className="profilePos" style={{transform: `translateX(${-position+5400}px)`}} size='massive'>
@@ -1365,7 +1381,7 @@ const Intropage = () => {
               </Comment>
             </Comment.Group>
 
-            
+
 
             <Comment.Group className="profilePos" style={{transform: `translateX(${-position+6720}px)`}} size='large'>
               <Comment>
@@ -1552,14 +1568,14 @@ const Intropage = () => {
 
 
 
-          
 
-            
+
+
           </div>
         */}
 
           <div className="blockPositionDivide"></div>
-          
+
 
           <div className="blockPositionDivide"></div>
 
@@ -1587,7 +1603,7 @@ const Intropage = () => {
           </div>
 
           <div className="blockPositionDivide"></div>
-          
+
 
           <div data-trigger className="startContentsTitleTStrong" >
             어떠한 기기에서도
@@ -1596,10 +1612,10 @@ const Intropage = () => {
           <div className="blockPositionDivide"></div>
           <div className="blockPositionDivide"></div>
 
-          <div className="device1T"> 
+          <div className="device1T">
             <div data-trigger>
               <img alt="" className="iphonePic" src="https://media.vlpt.us/images/iooi75/post/f7b1069c-b36c-41a8-9bd7-725fbb01940d/iphone-1845808_1280.png" />
-              
+
               <img alt="" className="iphoneGif" src ={iphoneG} />
             </div>
           </div>
@@ -1625,8 +1641,8 @@ const Intropage = () => {
           <div className="commentsGroup">
 
             <div className="commentsGroupX"> </div>
-            <div className="commentsGroupY">   
-            
+            <div className="commentsGroupY">
+
             </div>
             <div className="commentsGroupX"> </div>
           </div>
@@ -1641,7 +1657,7 @@ const Intropage = () => {
 
           <div className="blockPositionDivide"></div>
 
-          
+
           <div data-trigger>
           <Slider {...namecardSettings} className="cardlistGroup" >
               <div className="cardUI">
@@ -1702,7 +1718,7 @@ const Intropage = () => {
             </Slider>
           </div>
           <div className="blockPosition"></div>
-            
+
           <div data-trigger className="introLastContents">
             <div className="lastContentsTitleT">
               <div className="lastContentsTitlePosition" >
@@ -1715,7 +1731,7 @@ const Intropage = () => {
                 </Link>
               </div>
             </div>
-          
+
             <img className="introLastContents2" alt="" src="https://media.vlpt.us/images/iooi75/post/f682088c-ca53-4303-b9d0-e7b13bfa06f4/3_2.png" />
           </div>
 
@@ -1733,17 +1749,17 @@ const Intropage = () => {
             <div className="mobileSlider">
               <div className="mobileText">
                 <div className="colorTest02M"> ACTORZ </div>
-                <div className="colorTest01M"> 매번 똑같은 포트폴리오 양식 <br/><br/><br/> 
-                  나만의 특별한 포트폴리오에 사진과 영상을 담아 <br/><br/><br/>  남들과 다른 포트폴리오를 만들어 드리겠습니다 
+                <div className="colorTest01M"> 매번 똑같은 포트폴리오 양식 <br/><br/><br/>
+                  나만의 특별한 포트폴리오에 사진과 영상을 담아 <br/><br/><br/>  남들과 다른 포트폴리오를 만들어 드리겠습니다
                 </div>
                 <div className="scrollIMGPositionM">
                   <img alt="" className="scrollIMG" src="https://media.vlpt.us/images/iooi75/post/29cab61f-6111-4348-8e65-049fa80dbeeb/scroll_down.png"/>
                 </div>
-              
+
               </div>
               <img className="sliderAppContents" alt="" src="https://media.vlpt.us/images/iooi75/post/1f9c6dc0-f13d-446e-b6fc-fdf28a7ab865/m_visual17.jpg" />
-              
-              {/* <div className="mainContentsCenterDisplay"> 
+
+              {/* <div className="mainContentsCenterDisplay">
                     <div  className="scrollIMGPosition">
                       <img alt="" className="introLOGO" src="https://media.vlpt.us/images/iooi75/post/1f61e5e2-18d4-469a-8718-ff6799aadbaf/-1.png"/>
                     </div>
@@ -1769,8 +1785,8 @@ const Intropage = () => {
                       <img alt="" className="scrollIMG" src="https://media.vlpt.us/images/iooi75/post/29cab61f-6111-4348-8e65-049fa80dbeeb/scroll_down.png"/>
                     </div>
                   </div> */}
-                    
-                  {/* 
+
+                  {/*
                   <div data-trigger className="introLastContents">
                     <div className="lastContentsTitle">
                       <div className="lastContentsTitlePosition" >
@@ -1783,7 +1799,7 @@ const Intropage = () => {
                         </Link>
                       </div>
                     </div>
-                  
+
                     <img className="introLastContents2" alt="" src="https://media.vlpt.us/images/iooi75/post/f682088c-ca53-4303-b9d0-e7b13bfa06f4/3_2.png" />
                   </div> */}
             </div>
@@ -1791,13 +1807,13 @@ const Intropage = () => {
             <div className="mobileSlider">
               <div className="mobileText">
                   <div className="colorTest02M"> ACTORZ </div>
-                  <div className="colorTest01M"> 매번 똑같은 포트폴리오 양식 <br/><br/><br/> 
-                    나만의 특별한 포트폴리오에 사진과 영상을 담아 <br/><br/><br/>  남들과 다른 포트폴리오를 만들어 드리겠습니다 
+                  <div className="colorTest01M"> 매번 똑같은 포트폴리오 양식 <br/><br/><br/>
+                    나만의 특별한 포트폴리오에 사진과 영상을 담아 <br/><br/><br/>  남들과 다른 포트폴리오를 만들어 드리겠습니다
                   </div>
                   <div className="scrollIMGPositionM">
                     <img alt="" className="scrollIMG" src="https://media.vlpt.us/images/iooi75/post/29cab61f-6111-4348-8e65-049fa80dbeeb/scroll_down.png"/>
                   </div>
-                
+
                 </div>
               <img className="sliderAppContents" alt="" src="https://media.vlpt.us/images/iooi75/post/98ef02a5-a177-48ee-a7ce-ad7b1ebe0123/m_visual07.jpg" />
             </div>
@@ -1805,13 +1821,13 @@ const Intropage = () => {
             <div className="mobileSlider">
               <div className="mobileText">
                 <div className="colorTest02M"> ACTORZ </div>
-                <div className="colorTest01M"> 매번 똑같은 포트폴리오 양식 <br/><br/><br/> 
-                  나만의 특별한 포트폴리오에 사진과 영상을 담아 <br/><br/><br/>  남들과 다른 포트폴리오를 만들어 드리겠습니다 
+                <div className="colorTest01M"> 매번 똑같은 포트폴리오 양식 <br/><br/><br/>
+                  나만의 특별한 포트폴리오에 사진과 영상을 담아 <br/><br/><br/>  남들과 다른 포트폴리오를 만들어 드리겠습니다
                 </div>
                 <div className="scrollIMGPositionM">
                   <img alt="" className="scrollIMG" src="https://media.vlpt.us/images/iooi75/post/29cab61f-6111-4348-8e65-049fa80dbeeb/scroll_down.png"/>
                 </div>
-              
+
               </div>
               <img className="sliderAppContents" alt="" src="https://media.vlpt.us/images/iooi75/post/1fd75bb2-3d87-41d0-95a1-33cc8d09d15c/m_visual08_.jpg" />
             </div>
@@ -1819,13 +1835,13 @@ const Intropage = () => {
             <div className="mobileSlider">
               <div className="mobileText">
                 <div className="colorTest02M"> ACTORZ </div>
-                <div className="colorTest01M"> 매번 똑같은 포트폴리오 양식 <br/><br/><br/> 
-                  나만의 특별한 포트폴리오에 사진과 영상을 담아 <br/><br/><br/>  남들과 다른 포트폴리오를 만들어 드리겠습니다 
+                <div className="colorTest01M"> 매번 똑같은 포트폴리오 양식 <br/><br/><br/>
+                  나만의 특별한 포트폴리오에 사진과 영상을 담아 <br/><br/><br/>  남들과 다른 포트폴리오를 만들어 드리겠습니다
                 </div>
                 <div className="scrollIMGPositionM">
                   <img alt="" className="scrollIMG" src="https://media.vlpt.us/images/iooi75/post/29cab61f-6111-4348-8e65-049fa80dbeeb/scroll_down.png"/>
                 </div>
-              
+
               </div>
               <img className="sliderAppContents" alt="" src="https://media.vlpt.us/images/iooi75/post/3876dded-8caa-4654-8678-573602f23305/m_visual09_.jpg" />
             </div>
@@ -1834,14 +1850,14 @@ const Intropage = () => {
             <div className="mobileSlider">
               <div className="mobileText">
                 <div className="colorTest02M"> ACTORZ </div>
-                <div className="colorTest01M"> 매번 똑같은 포트폴리오 양식 <br/><br/><br/> 
-                  나만의 특별한 포트폴리오에 사진과 영상을 담아 <br/><br/><br/>  남들과 다른 포트폴리오를 만들어 드리겠습니다 
-                </div> 
+                <div className="colorTest01M"> 매번 똑같은 포트폴리오 양식 <br/><br/><br/>
+                  나만의 특별한 포트폴리오에 사진과 영상을 담아 <br/><br/><br/>  남들과 다른 포트폴리오를 만들어 드리겠습니다
+                </div>
 
                 <div className="scrollIMGPositionM">
                   <img alt="" className="scrollIMG" src="https://media.vlpt.us/images/iooi75/post/29cab61f-6111-4348-8e65-049fa80dbeeb/scroll_down.png"/>
                 </div>
-              
+
               </div>
               <img className="sliderAppContents" alt="" src="https://media.vlpt.us/images/iooi75/post/4cd38932-1614-4947-adf0-3e67c3eab566/m_visual10.jpg" />
             </div>
@@ -1849,13 +1865,13 @@ const Intropage = () => {
             <div className="mobileSlider">
               <div className="mobileText">
                 <div className="colorTest02M"> ACTORZ </div>
-                <div className="colorTest01M"> 매번 똑같은 포트폴리오 양식 <br/><br/><br/> 
-                  나만의 특별한 포트폴리오에 사진과 영상을 담아 <br/><br/><br/>  남들과 다른 포트폴리오를 만들어 드리겠습니다 
-                </div> 
+                <div className="colorTest01M"> 매번 똑같은 포트폴리오 양식 <br/><br/><br/>
+                  나만의 특별한 포트폴리오에 사진과 영상을 담아 <br/><br/><br/>  남들과 다른 포트폴리오를 만들어 드리겠습니다
+                </div>
                 <div className="scrollIMGPositionM">
                   <img alt="" className="scrollIMG" src="https://media.vlpt.us/images/iooi75/post/29cab61f-6111-4348-8e65-049fa80dbeeb/scroll_down.png"/>
                 </div>
-              
+
               </div>
               <img className="sliderAppContents" alt="" src="https://media.vlpt.us/images/iooi75/post/64d865c2-6db1-4ef2-ad10-d613967527b4/m_visual11.jpg" />
             </div>
@@ -1863,13 +1879,13 @@ const Intropage = () => {
             <div className="mobileSlider">
               <div className="mobileText">
                 <div className="colorTest02M"> ACTORZ </div>
-                <div className="colorTest01M"> 매번 똑같은 포트폴리오 양식 <br/><br/><br/> 
-                  나만의 특별한 포트폴리오에 사진과 영상을 담아 <br/><br/><br/>  남들과 다른 포트폴리오를 만들어 드리겠습니다 
+                <div className="colorTest01M"> 매번 똑같은 포트폴리오 양식 <br/><br/><br/>
+                  나만의 특별한 포트폴리오에 사진과 영상을 담아 <br/><br/><br/>  남들과 다른 포트폴리오를 만들어 드리겠습니다
                 </div>
                 <div className="scrollIMGPositionM">
                   <img alt="" className="scrollIMG" src="https://media.vlpt.us/images/iooi75/post/29cab61f-6111-4348-8e65-049fa80dbeeb/scroll_down.png"/>
                 </div>
-              
+
               </div>
               <img className="sliderAppContents" alt="" src="https://media.vlpt.us/images/iooi75/post/e95deb2c-abfe-4963-8217-531b78ca6248/m_visual12_.jpg" />
             </div>
@@ -1878,13 +1894,13 @@ const Intropage = () => {
             <div className="mobileSlider">
               <div className="mobileText">
                 <div className="colorTest02M"> ACTORZ </div>
-                <div className="colorTest01M"> 매번 똑같은 포트폴리오 양식 <br/><br/><br/> 
-                  나만의 특별한 포트폴리오에 사진과 영상을 담아 <br/><br/><br/>  남들과 다른 포트폴리오를 만들어 드리겠습니다 
+                <div className="colorTest01M"> 매번 똑같은 포트폴리오 양식 <br/><br/><br/>
+                  나만의 특별한 포트폴리오에 사진과 영상을 담아 <br/><br/><br/>  남들과 다른 포트폴리오를 만들어 드리겠습니다
                 </div>
                 <div className="scrollIMGPositionM">
                   <img alt="" className="scrollIMG" src="https://media.vlpt.us/images/iooi75/post/29cab61f-6111-4348-8e65-049fa80dbeeb/scroll_down.png"/>
                 </div>
-              
+
               </div>
               <img className="sliderAppContents" alt="" src="https://media.vlpt.us/images/iooi75/post/1985376a-539d-4a79-ad8e-2cee8638df53/m_visual18_.jpg" />
             </div>
@@ -1892,13 +1908,13 @@ const Intropage = () => {
             <div className="mobileSlider">
               <div className="mobileText">
                 <div className="colorTest02M"> ACTORZ </div>
-                <div className="colorTest01M"> 매번 똑같은 포트폴리오 양식 <br/><br/><br/> 
-                  나만의 특별한 포트폴리오에 사진과 영상을 담아 <br/><br/><br/>  남들과 다른 포트폴리오를 만들어 드리겠습니다 
+                <div className="colorTest01M"> 매번 똑같은 포트폴리오 양식 <br/><br/><br/>
+                  나만의 특별한 포트폴리오에 사진과 영상을 담아 <br/><br/><br/>  남들과 다른 포트폴리오를 만들어 드리겠습니다
                 </div>
                 <div className="scrollIMGPositionM">
                   <img alt="" className="scrollIMG" src="https://media.vlpt.us/images/iooi75/post/29cab61f-6111-4348-8e65-049fa80dbeeb/scroll_down.png"/>
                 </div>
-              
+
               </div>
               <img className="sliderAppContents" alt="" src="https://media.vlpt.us/images/iooi75/post/307c2755-b93d-4138-b620-cb4b87704d9a/m_visual05__.jpg" />
             </div>
@@ -1906,13 +1922,13 @@ const Intropage = () => {
             <div className="mobileSlider">
               <div className="mobileText">
                 <div className="colorTest02M"> ACTORZ </div>
-                <div className="colorTest01M"> 매번 똑같은 포트폴리오 양식 <br/><br/><br/> 
-                  나만의 특별한 포트폴리오에 사진과 영상을 담아 <br/><br/><br/>  남들과 다른 포트폴리오를 만들어 드리겠습니다 
+                <div className="colorTest01M"> 매번 똑같은 포트폴리오 양식 <br/><br/><br/>
+                  나만의 특별한 포트폴리오에 사진과 영상을 담아 <br/><br/><br/>  남들과 다른 포트폴리오를 만들어 드리겠습니다
                 </div>
                 <div className="scrollIMGPositionM">
                   <img alt="" className="scrollIMG" src="https://media.vlpt.us/images/iooi75/post/29cab61f-6111-4348-8e65-049fa80dbeeb/scroll_down.png"/>
                 </div>
-              
+
               </div>
               <img className="sliderAppContents" alt="" src="https://media.vlpt.us/images/iooi75/post/82f4119f-55e9-40d7-a09c-0095ce83065f/m_visual03.jpg" />
             </div>
@@ -1920,8 +1936,8 @@ const Intropage = () => {
             <div className="mobileSlider">
               <div className="mobileText">
                 <div className="colorTest02M"> ACTORZ </div>
-                <div className="colorTest01M"> 매번 똑같은 포트폴리오 양식 <br/><br/><br/> 
-                  나만의 특별한 포트폴리오에 사진과 영상을 담아 <br/><br/><br/>  남들과 다른 포트폴리오를 만들어 드리겠습니다 
+                <div className="colorTest01M"> 매번 똑같은 포트폴리오 양식 <br/><br/><br/>
+                  나만의 특별한 포트폴리오에 사진과 영상을 담아 <br/><br/><br/>  남들과 다른 포트폴리오를 만들어 드리겠습니다
                 </div>
                 <div className="scrollIMGPositionM">
                   <img alt="" className="scrollIMG" src="https://media.vlpt.us/images/iooi75/post/29cab61f-6111-4348-8e65-049fa80dbeeb/scroll_down.png"/>
@@ -1933,13 +1949,13 @@ const Intropage = () => {
             <div className="mobileSlider">
               <div className="mobileText">
                 <div className="colorTest02M"> ACTORZ </div>
-                <div className="colorTest01M"> 매번 똑같은 포트폴리오 양식 <br/><br/><br/> 
-                  나만의 특별한 포트폴리오에 사진과 영상을 담아 <br/><br/><br/>  남들과 다른 포트폴리오를 만들어 드리겠습니다 
-                </div> 
+                <div className="colorTest01M"> 매번 똑같은 포트폴리오 양식 <br/><br/><br/>
+                  나만의 특별한 포트폴리오에 사진과 영상을 담아 <br/><br/><br/>  남들과 다른 포트폴리오를 만들어 드리겠습니다
+                </div>
                 <div className="scrollIMGPositionM">
                   <img alt="" className="scrollIMG" src="https://media.vlpt.us/images/iooi75/post/29cab61f-6111-4348-8e65-049fa80dbeeb/scroll_down.png"/>
                 </div>
-              
+
               </div>
               <img className="sliderAppContents" alt="" src="https://media.vlpt.us/images/iooi75/post/7d22a316-5a2a-4c1c-98c0-d5b0abfba2c1/m_visual13.jpg" />
             </div>
@@ -1947,13 +1963,13 @@ const Intropage = () => {
             <div className="mobileSlider">
               <div className="mobileText">
                 <div className="colorTest02M"> ACTORZ </div>
-                <div className="colorTest01M"> 매번 똑같은 포트폴리오 양식 <br/><br/><br/> 
-                  나만의 특별한 포트폴리오에 사진과 영상을 담아 <br/><br/><br/>  남들과 다른 포트폴리오를 만들어 드리겠습니다 
-                </div> 
+                <div className="colorTest01M"> 매번 똑같은 포트폴리오 양식 <br/><br/><br/>
+                  나만의 특별한 포트폴리오에 사진과 영상을 담아 <br/><br/><br/>  남들과 다른 포트폴리오를 만들어 드리겠습니다
+                </div>
                 <div className="scrollIMGPositionM">
                   <img alt="" className="scrollIMG" src="https://media.vlpt.us/images/iooi75/post/29cab61f-6111-4348-8e65-049fa80dbeeb/scroll_down.png"/>
                 </div>
-              
+
               </div>
               <img className="sliderAppContents" alt="" src="https://media.vlpt.us/images/iooi75/post/76ffc763-3084-49b7-992c-0ecd77639eda/m_visual14_.jpg" />
             </div>
@@ -1961,13 +1977,13 @@ const Intropage = () => {
             <div className="mobileSlider">
               <div className="mobileText">
                 <div className="colorTest02M"> ACTORZ </div>
-                <div className="colorTest01M"> 매번 똑같은 포트폴리오 양식 <br/><br/><br/> 
-                  나만의 특별한 포트폴리오에 사진과 영상을 담아 <br/><br/><br/>  남들과 다른 포트폴리오를 만들어 드리겠습니다 
-                </div> 
+                <div className="colorTest01M"> 매번 똑같은 포트폴리오 양식 <br/><br/><br/>
+                  나만의 특별한 포트폴리오에 사진과 영상을 담아 <br/><br/><br/>  남들과 다른 포트폴리오를 만들어 드리겠습니다
+                </div>
                 <div className="scrollIMGPositionM">
                   <img alt="" className="scrollIMG" src="https://media.vlpt.us/images/iooi75/post/29cab61f-6111-4348-8e65-049fa80dbeeb/scroll_down.png"/>
                 </div>
-              
+
               </div>
               <img className="sliderAppContents" alt="" src="https://media.vlpt.us/images/iooi75/post/b3ec1068-7920-40f3-bafd-3b98fcbe97a2/m_visual15_.jpg" />
             </div>
@@ -1975,13 +1991,13 @@ const Intropage = () => {
             <div className="mobileSlider">
               <div className="mobileText">
                 <div className="colorTest02M"> ACTORZ </div>
-                <div className="colorTest01M"> 매번 똑같은 포트폴리오 양식 <br/><br/><br/> 
-                  나만의 특별한 포트폴리오에 사진과 영상을 담아 <br/><br/><br/>  남들과 다른 포트폴리오를 만들어 드리겠습니다 
-                </div> 
+                <div className="colorTest01M"> 매번 똑같은 포트폴리오 양식 <br/><br/><br/>
+                  나만의 특별한 포트폴리오에 사진과 영상을 담아 <br/><br/><br/>  남들과 다른 포트폴리오를 만들어 드리겠습니다
+                </div>
                 <div className="scrollIMGPositionM">
                   <img alt="" className="scrollIMG" src="https://media.vlpt.us/images/iooi75/post/29cab61f-6111-4348-8e65-049fa80dbeeb/scroll_down.png"/>
                 </div>
-              
+
               </div>
               <img className="sliderAppContents" alt="" src="https://media.vlpt.us/images/iooi75/post/351cf1e9-9190-46eb-9c48-31240325ac2b/m_visual16_.jpg" />
             </div>
@@ -2011,14 +2027,14 @@ const Intropage = () => {
           <div className="blockPositionDivide"></div>
 
           <div data-trigger className="startContentsTitleM" >
-            답은 
+            답은
           </div>
 
           <div className="blockPosition"></div>
 
           <div data-trigger className="startContentsTitleM" >
             <img className="mainActorPicM" src="https://media.vlpt.us/images/iooi75/post/ebbbb9d9-784d-4210-b961-2f1d833423b5/Screen%20Shot%202021-07-17%20at%202.16.19%20AM.png" alt="" />
-            
+
           <div className="blockPositionDivide"></div>
           <div data-trigger className="contentsPositionWhereStrong"> 배우 </div>
           </div>
@@ -2135,7 +2151,7 @@ const Intropage = () => {
               </Comment>
             </Comment.Group>
 
-            
+
 
             <Comment.Group data-trigger className="commentsBlurEffect" size='large'>
               <Comment>
@@ -2351,7 +2367,7 @@ const Intropage = () => {
           </div>
 
           <div className="blockPositionDivide"></div>
-          
+
 
           <div data-trigger className="startContentsTitleT" >
             어떠한 기기에서도
@@ -2360,11 +2376,11 @@ const Intropage = () => {
           <div className="blockPositionDivide"></div>
           <div className="blockPositionDivide"></div>
 
-          
-          <div className="device1M"> 
+
+          <div className="device1M">
             <div data-trigger>
               {/* <img alt="" className="iphonePicM" src="https://media.vlpt.us/images/iooi75/post/f7b1069c-b36c-41a8-9bd7-725fbb01940d/iphone-1845808_1280.png" /> */}
-              
+
               <img alt="" className="iphoneGifM" src ={iphoneG} />
             </div>
           </div>
@@ -2466,7 +2482,7 @@ const Intropage = () => {
               <Button type="primary" className="startButton1" danger>시작하기</Button>
             </Link>
           </div> */}
-        
+
         <div data-trigger className="introLastContents">
           <div className="lastContentsTitleM">
             <div className="lastContext">
@@ -2479,11 +2495,11 @@ const Intropage = () => {
               </Link>
             </div>
           </div>
-        
+
           <img className="introLastContents2" alt="" src="https://media.vlpt.us/images/iooi75/post/f682088c-ca53-4303-b9d0-e7b13bfa06f4/3_2.png" />
         </div>
         <GotoTopMobile />
-      </>}  
+      </>}
     </>
   )
 }
